@@ -34,13 +34,17 @@
 	<b>채점 결과는 <%=summ%> 입니다.</b>
 	<br>
 	<!-- 3. 1부터 n까지의 합계를 구하는 함수 -->
-	<%
-		int sum = 0;
-		for(int i = 1; i <= 10; i++){
-			sum = sum + i;
+	<%!
+		// 1 부터 n까지의 합을 구하는 함수
+		public int getSum(int number){
+			int sum = 0;
+			for(int i = 1; i <= number; i++){
+				sum += i;
+			}
+			return sum;
 		}
 	%>
-	<b>1에서 50까지의 합은  <%=sum%> 입니다.</b>
+	<b> 1부터 50까지의 합은 <%=getSum(50) %></b>
 	<br>
 	
 	<!-- 4. 나이 구하기 -->
