@@ -14,41 +14,24 @@
 <title>배달의 민족 검색</title>
 </head>
 <body>
-<form method="post" action="/JSP/MarondalEx07_2.jsp">
+<form method="get" action="/JSP/MarondalEx07_2.jsp">
+	
 	<div class="container">
-	
-	<h1>메뉴 검색</h1>
-	<div class="d-flex">
-	<input type="text" name="menu">
-	<label><input type="checkbox" name="point">4점 이하 제외</label>
-	</div>
-	<br>
-	<label><input type="submit" class="btn btn-success" value="검색"></label>
-	<table border="1">
-		<%
-		String menu = request.getParameter("menu");
-	
-		List<Map<String, Object>> list = new ArrayList<>();
-	    Map<String, Object> map = new HashMap<String, Object>() {{ put("name", "버거킹"); put("menu", "햄버거"); put("point", 4.3); } };
-	    list.add(map);
-	    map = new HashMap<String, Object>() {{ put("name", "BBQ"); put("menu", "치킨"); put("point", 3.8); } };
-	    list.add(map);
-	    map = new HashMap<String, Object>() {{ put("name", "교촌치킨"); put("menu", "치킨"); put("point", 4.1); } };
-	    list.add(map);
-	    map = new HashMap<String, Object>() {{ put("name", "도미노피자"); put("menu", "피자"); put("point", 4.5); } };
-	    list.add(map);
-	    map = new HashMap<String, Object>() {{ put("name", "맥도날드"); put("menu", "햄버거"); put("point", 3.8); } };
-	    list.add(map);
-	    map = new HashMap<String, Object>() {{ put("name", "BHC"); put("menu", "치킨"); put("point", 4.2); } };
-	    list.add(map);
-	    map = new HashMap<String, Object>() {{ put("name", "반올림피자"); put("menu", "피자"); put("point", 4.3); } };
-	    list.add(map);
-	    
-		%>
-		
-		
-	</table>
-	
+		<table class="table">
+		<h1>메뉴 검색</h1>
+			<div class="d-flex">
+				<div>
+				<input type="text" name="menus">
+				</div>
+				<div>
+				<label><input type="checkbox" name="pointing" value="points">4점 이하 제외</label>
+				</div>
+				</div>
+				<br>
+				<div>
+				<label><input type="submit" class="btn btn-success" value="검색"></label>
+				</div>
+		</table>
 	</div>
 </form>
 </body>
