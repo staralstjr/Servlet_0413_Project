@@ -22,14 +22,40 @@
 		out.println(format.format(today.getTime()) +"<br>");
 		
 		// 어제 날짜 출력
-		today.add(Calendar.DATE, -100);
+		/* today.add(Calendar.DATE, -100);
 		out.println(format.format(today.getTime()) +"<br>");
 		
 		today.add(Calendar.MONTH, +13);
 		out.println(format.format(today.getTime()) +"<br>");
 		
 		today.add(Calendar.YEAR, -30);
-		out.println(format.format(today.getTime()) +"<br>");
+		out.println(format.format(today.getTime()) +"<br>"); */
+		
+		// Calendar 로 정보 얻기
+		int weeks = today.get(Calendar.WEEK_OF_YEAR);
+		out.println(weeks);
+		
+		int day = today.get(Calendar.DAY_OF_WEEK);
+		out.println(day);
+		
+		// 날짜 비교
+		Calendar otherDay = Calendar.getInstance();
+		/* otherDay.add(Calendar.DATE, 133); */
+		
+		int result = today.compareTo(otherDay);
+		out.println(result);
+		// 앞의 객체가 더 크면 1
+		// 앞의 객체와 같으면 0
+		// 앞의 객체가 더 작으면 -1
+		// 쉽게 말해서 today.compareTo(otherDay) 에서 today - otherDay 가 양수, 같으면, 음수로 생각하면 쉬워
+		if(result > 0){
+			out.println("앞 객체가 더 크다");
+		}else if(result < 0){
+			out.println("뒤 객체가 더 크다");
+		}else {
+			out.println("두 날짜가 같다");
+		}
+		
 	%>
 </body>
 </html>
